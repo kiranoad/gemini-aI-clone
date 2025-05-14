@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Great+Vibes&family=Outfit:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: Outfit;
+}
+
+#root{
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #fff;
+}
