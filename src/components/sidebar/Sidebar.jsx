@@ -20,7 +20,7 @@ const Sidebar = () => {
   const handleMenuClick = () => {
     setIsHamburgerMenuOn((prev) => !prev);
   };
-  const { onSent, prevPrompt, setResultPrompt } = useContext(Context);
+  const { prevPrompt } = useContext(Context);
   return (
     <div
       onMouseEnter={handleMouseHover}
