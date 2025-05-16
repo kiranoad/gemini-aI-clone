@@ -11,6 +11,7 @@
     justify-content: space-between;
     background-color: #f0f4f9;
     transition: width 0.4s;
+    /* animation: fadeIn 1.5s; */
 }
 /* .sidebar:hover{
     width: 260px;
@@ -50,6 +51,7 @@
     text-align: left;
     padding-left: 20px;
     /* align-items: start; */
+    animation: fadeIn 1.5s;
 }
 .sidebar .recent-title{
     margin-top: 30px;
@@ -78,8 +80,17 @@
 .sidebar.bottom{
     display: flex;
     flex-direction: column;
+    /* animation: fadeIn 1.5s; */
 }
 .sidebar.bottom-item{
     padding-right: 10px;
     cursor: pointer;
+}
+
+
+
+@media(max-width:600px){
+    .sidebar{
+        display: none;
+    }
 }

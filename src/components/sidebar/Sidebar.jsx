@@ -20,7 +20,11 @@ const Sidebar = () => {
   const handleMenuClick = () => {
     setIsHamburgerMenuOn((prev) => !prev);
   };
-  const { prevPrompt } = useContext(Context);
+  const { onSent, prevPrompt, setRecentPrompt,newChat} = useContext(Context);
+  const loadPrompt = async(prompt) =>{
+    setRecentPrompt(prompt)
+    await onSent(prompt)
+  }
   return (
     <div
       onMouseEnter={handleMouseHover}
@@ -34,7 +38,7 @@ const Sidebar = () => {
           src={isHamburgerMenuOn ? assets.plus_icon : assets.menu_icon}
           alt=""
         />
-        <div className="new-chat">
+        <div onClick={() =>newChat()} className="new-chat">
           <img src={assets.plus_icon} alt="" />
           {extended ? <p>New Chat</p> : null}
         </div>
@@ -43,7 +47,7 @@ const Sidebar = () => {
             <p className="recent-title">Recent</p>
             {prevPrompt.map((item, index) => {
               return (
-                <div className="recent-entry">
+                <div onClick={() =>loadPrompt(item)} className="recent-entry">
                   <img src={assets.message_icon} alt="" />
                   <p>{item}</p>
                 </div>
