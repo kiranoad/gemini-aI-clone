@@ -18,7 +18,7 @@ const Main = () => {
         </div>
         <div className="main-container">
             {!showResult ?
-            <>
+            <div>
                  <div className="greet">
                 <p><span>Hello, Kiran.</span></p>
                 <p>How can I help you today?</p>
@@ -41,7 +41,7 @@ const Main = () => {
                     <img src={assets.code_icon} alt="" />
                 </div>
             </div>
-            </>
+            </div>
             :<div className='result'>
                 <div className='result-title'>
                     <img src={assets.user_icon} alt="" />
@@ -64,12 +64,23 @@ const Main = () => {
        
             <div className="main-bottom">
                 <div className="search-box">
-                <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder="Enter a prompt here" />
+                         <input
+                        type="text"
+                        placeholder="Enter a prompt here"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' && input.trim() !== '') {
+                            onSent(); // same as clicking the send icon
+                            }
+                        }}
+                        />
+
 
                     <div>
                         <img src={assets.gallery_icon} alt="" />
                         <img src={assets.mic_icon} alt="" />
-                        {input?<img onClick={()=>onSent()} src={assets.send_icon} alt="" />:null}
+                        {input?<img onClick={()=>onSent()} src={assets.send_icon} alt="" id='enter' />:null}
                         
                     </div>
                 </div>

@@ -20,20 +20,12 @@
     border: 2px solid red,blue,green,pink,orchid;
 }
 .main-container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
     flex-grow: 1;
     overflow: scroll;
-    /* text-align: left; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* width: 100%; */
-    /* flex-basis: 1; */
-    /* width: 100%; */
-    /* width: 100%; */
-/* border: solid gray; */
-    /* max-width: 900px; */
-    /* margin: auto; */
-    /* text-align: left; */
+   
 }
 .main .greet{
     margin: 50px 0px;
@@ -52,16 +44,17 @@
 }
 .main .cards{
     /* border: solid; */
-    display: grid;
+    display: flex;
     max-width: 100%;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill,minmax(180px,230px));
+    /* grid-template-columns: repeat(auto-fill,minmax(180px,230px)); */
     gap: 15px;
     padding: 20px;
 }
 .main .cards .card{
     height: 200px;
     padding: 15px;
+    max-width: 250px;
     background-color: #f0f4f9;
     border-radius: 10px;
     position: relative;
@@ -86,12 +79,15 @@
     transition: 0.4s ease-in-out;
 }
 .main-bottom{
-    position: static;
-    bottom: 0;
+    /* border: 1px solid; */
+    position: fixed;
+    bottom: -0;
     width: 100%;
     max-width: 900px;
     padding: 0px 20px;
     margin: auto;
+
+    
 }
 .search-box{
     display: flex;
